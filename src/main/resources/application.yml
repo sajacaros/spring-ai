@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ai-test
+  ai:
+    openai:
+      api-key:
