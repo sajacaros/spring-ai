@@ -21,8 +21,8 @@ public class AIController {
     private static final String TEMPLATE = """
                 아래는 table의 column 목록입니다.
                 사용자의 질의에 맞는 SQL 문에서 WHERE 절 이하 부분만 작성해 주세요.
-                쿼리문은 반드시 table column information을 참조하여 작성해 주세요.
-                날짜 조건이 포함된 경우, SQL 함수를 사용하지 말고 현재 날짜를 기준으로 한 실제 값을 작성해 주세요.
+                쿼리문은 반드시 [table column information]을 참조하여 작성해 주세요.
+                날짜 조건이 포함된 경우, SQL 함수를 사용하지 말고 `현재 시간` 기준으로 한 실제 값을 작성해 주세요.
                             
                 [additional information]
                 `날짜 데이터`의 형태 : YYYY-MM-dd HH:mm:ss 형식의 text 타입

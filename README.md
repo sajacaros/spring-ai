@@ -1,4 +1,10 @@
 # spring ai
 ## openai key setting
 - copy configure file
-  - application-secret-default.yaml -> application-secret.yaml
+  - secret-default.yml -> secret.yml
+  ```
+  spring:
+    ai:
+      openai:
+        api-key: {Your Key}
+  ```
