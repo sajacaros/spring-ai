@@ -1,6 +1,7 @@
 spring:
   application:
     name: ai-test
-  ai:
-    openai:
-      api-key:
+  config:
+    import: application-secret.yml
+
+
