@@ -1,0 +1,18 @@
+###
+GET http://localhost:8080/grid-query?query="학교에 'adm'이 들어간 데이터를 뽑아주세요. 컬럼명으로 내림차순 정렬해주세요."
+
+
+
+###
+GET http://localhost:8080/grid-query?query="1년전부터 6개월 전까지 추가된 데이터를 뽑아주세요."
+
+
+
+###
+GET http://localhost:8080/grid-query?query="최종수정자 id에 adm이 들어간 데이터를 뽑아주세요."
+
+
+
+###
+GET http://localhost:8080/grid-query?query="최종수정자 id에 adm이 들어간 데이터를 뽑아주세요. 수정일시는 오름차순, 학교는 역순으로 정렬해 주세요."
+

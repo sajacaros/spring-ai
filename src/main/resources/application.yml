@@ -1,6 +1,50 @@
 spring:
+  profiles:
+    active: dev
   application:
     name: ai-test
   config:
-    import: classpath:secret.yml
+    import: secret.yml
+grid:
+  template: |-
+    [requirements]
+    사용자의 질의에 맞는 SQL 문에서 WHERE 절과 SORT 절을 작성해 주세요.
+    날짜 조건이 포함된 경우, SQL 함수를 사용하지 말고 `현재 시간` 기준으로 작성해 주세요.
+    query와 sort는 반드시 `table column information`을 참조하여 작성해 주세요.
+    사용자 질의에서 `table column information`에 없는 column에 대해서는 빈칸으로 남겨주세요.
+    정렬할 때에는 `ASC`, `DESC`를 사용해주세요.
+    `ORDER BY`와 `WHERE` 문자열은 생략해 주세요.
+                     
+    [additional information]
+    `날짜 데이터`의 형태 : YYYY-MM-dd HH:mm:ss 형식의 text 타입
+    `현재 시간` : {currentDateTime}
+    `boolean 데이터`의 형태 : 'Y', 'N' 으로 구성
+    `최종수정자`의 형태 : '이름(id)' 형태로 구성
+    
+    [table column information]
+    컬럼한글명
+    최종수정자
+    최종수정일시
+    연관테이블수
+    컬럼명
+    데이터타입
+    DB명/스키마명
+    
+    -- WHERE 절 예시
+    <% if 컬럼명 in table column information %>
+      최종수정일시 >= '{currentDateTime}'
+      AND 최종수정자 = '이름(id)'
+      -- 추가 조건들...
+    <% else %>
+      -- 빈칸
+    
+    -- SORT 절 예시
+    <% if 컬럼명 in table column information %>
+      최종수정일시 DESC
+      -- 추가 정렬 조건들...
+    <% else %>
+      -- 빈칸
+                 
+    사용자 질의: {query}
+    {format}
 
